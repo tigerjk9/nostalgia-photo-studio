@@ -35,8 +35,6 @@ tags: [toyproject, 바이브코딩]
     * 2000년대 싸이월드 감성
 3.  **결과물 확인 및 다운로드**: 생성된 8장의 사진을 한눈에 보고, 마음에 드는 사진을 개별적으로 저장하거나 전체를 ZIP 파일로 한 번에 다운로드할 수 있습니다.
 
-![원본 사진과 변환된 사진 비교](/assets/comparison.png)
-
 <br>
 
 ### 🛠️ 어떻게 만들었을까? (개발 과정 및 기술 스택)
@@ -76,4 +74,4 @@ tags: [toyproject, 바이브코딩]
 프로젝트를 직접 체험해보거나, 전체 코드를 확인하고 싶으시다면 아래 링크를 방문해주세요. 
 
 * 🌐 **라이브 데모**: [nostalgia-photo-studio.netlify.app](https://nostalgia-photo-studio.netlify.app)
-* 🔗 **GitHub 저장소**: (여기에 본인의 GitHub 저장소 링크를 입력하세요)
+* 🔗 **GitHub 저장소**: [https://github.com/tigerjk9/nostalgia-photo-studio/tree/main](https://github.com/tigerjk9/nostalgia-photo-studio/tree/main)
