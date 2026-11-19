@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>추억 사진관</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js" } }</script>
+    <script src="era-gallery.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
@@ -147,6 +149,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalImage = document.getElementById('modal-image');
     const modalCloseButton = document.getElementById('modal-close-button');
 
+    // --- 3D ERA GALLERY (era-gallery.js, 없거나 실패하면 격자 화면 그대로) ---
+    const openModal = (image) => {
+        modalImage.src = image.src;
+        imageModal.classList.add('show');
+    };
+    const gallery = window.EraGallery?.mount({
+        grid: resultsGrid,
+        title: '시대별 3D 갤러리',
+        onOpen: (index) => openModal(generatedImages[index]),
+    });
 
     // --- CONSTANTS ---
     const VINTAGE_STYLES = [
@@ -201,6 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             resultsGrid.appendChild(card);
         });
+        gallery?.sync(generatedImages);
     };
 
     // --- CORE LOGIC FUNCTIONS ---
@@ -320,6 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
         originalImage = null;
         generatedImages = [];
         isGenerating = false;
+        gallery?.reset();
         
         imageUploadInput.value = ''; // Reset file input
         imagePreview.src = '';
@@ -364,8 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
              const index = imageContainer.dataset.index;
              const image = generatedImages[index];
              if (image && image.status === 'completed') {
-                modalImage.src = image.src;
-                imageModal.classList.add('show');
+                openModal(image);
              }
         }
     });

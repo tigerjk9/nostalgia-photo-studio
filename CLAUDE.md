@@ -22,6 +22,7 @@
 
 ## 변경 핵심 이력
 - 2026-04-19: Gemini 모델명 GA 전환 (`-preview` 제거) + Vercel 호스팅 (Netlify 종료) + README 현행화
+- 2026-11-19: 결과 3D 갤러리 추가 (`era-gallery.js`, three.js 0.169.0 지연 로드, 실패 시 기존 격자 유지)
 
 ## 부스 등록
 🍌 나노 바나나 시리즈 4번 카드 (`nanoBananaApps[3]` in 부스 index.html)

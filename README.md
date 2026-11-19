@@ -124,7 +124,8 @@ python -m http.server 8000
 ```
 nostalgia-photo-studio/
 ├── README.md       # 본 문서
-└── index.html      # 단일 파일 웹앱 (HTML + CSS + JS 통합)
+├── index.html      # 단일 파일 웹앱 (HTML + CSS + JS 통합)
+└── era-gallery.js  # 3D 시대 갤러리 (three.js 지연 로드, 없어도 격자로 동작)
 ```
 
 ---
@@ -133,6 +134,7 @@ nostalgia-photo-studio/
 
 | 날짜 | 내용 |
 |------|------|
+| 2026-11-19 | 결과를 시간 순서로 걷는 3D 갤러리 추가(`era-gallery.js`). 격자 보기와 전환, WebGL2가 없으면 기존 격자 유지 |
 | 2026-04-19 | Vercel(`nostalgia-photo-studio.vercel.app`) 배포 + README 현행화 |
 | 2026-04-19 | Gemini 모델명 GA 전환: `gemini-2.5-flash-image-preview` → `gemini-2.5-flash-image` (404 오류 해결) |
 
